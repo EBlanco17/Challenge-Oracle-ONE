@@ -23,6 +23,8 @@ main {
   color: #0a3871;
   margin-top: 90px;
   text-transform: lowercase;
+  height: 240px;
+  resize: none;
 }
 ::placeholder {
   color: #0a3871;
@@ -35,13 +37,15 @@ main {
   background: #ffffff;
   background-image: url(assets/Muñeco.svg);
   background-repeat: no-repeat;
-  border: none;
+  border: red 1px solid;
   border-radius: 24px;
   color: #0a3871;
   margin-left: 90px;
   margin-top: 20px;
   padding-left: 20px;
-  position: fixed;
+  position: absolute;
+  resize: none;
+  height: 330px;
 }
 .mensaje:focus {
   outline: none;
