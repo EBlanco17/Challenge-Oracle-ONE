@@ -1,5 +1,8 @@
 const ingreso = document.querySelector(".ingreso");
 const mensaje = document.querySelector(".mensaje");
+const img = document.querySelector(".img");
+const elementos = document.querySelector(".span");
+img.src="assets/Muñeco.svg";
 
 const codificacion = {
     a: "ai",
@@ -14,8 +17,9 @@ function encriptar() {
   palabra = convertToLowerCase(palabra);
   let encriptada = codificar(palabra);
   ingreso.value = "";
-  mensaje.style.backgroundImage = "none";
+  img.style.display = "none";
   mensaje.value = encriptada;
+  elementos.style.display = "none";
 }
 
 function desencriptar() {
@@ -23,7 +27,7 @@ function desencriptar() {
   palabra = convertToLowerCase(palabra);
   let desencriptada = decodificar(palabra);
   ingreso.value = "";
-  mensaje.style.backgroundImage = "none";
+  img.style.display = "none";
   mensaje.value = desencriptada;
 }
 
