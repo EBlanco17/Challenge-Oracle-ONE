@@ -2,37 +2,54 @@ const ingreso = document.querySelector(".ingreso");
 const mensaje = document.querySelector(".mensaje");
 const img = document.querySelector(".img");
 const elementos = document.querySelector(".span");
-img.src="assets/Muñeco.svg";
+
+const boton = document.querySelector(".btn-copiar");
+
+img.src = "assets/Muñeco.svg";
 
 const codificacion = {
-    a: "ai",
-    e: "enter",
-    i: "imes",
-    o: "ober",
-    u: "ufat",
-  };
+  a: "ai",
+  e: "enter",
+  i: "imes",
+  o: "ober",
+  u: "ufat",
+};
+
+if (mensaje.value == "") {
+  boton.style.display = "none";
+}
 
 function encriptar() {
-  let palabra = ingreso.value;
-  palabra = convertToLowerCase(palabra);
-  let encriptada = codificar(palabra);
-  ingreso.value = "";
-  img.style.display = "none";
-  mensaje.value = encriptada;
-  elementos.style.display = "none";
+  if (ingreso.value == "") {
+    alert("No hay nada por encriptar");
+  } else {
+    let palabra = ingreso.value;
+    palabra = convertToLowerCase(palabra);
+    let encriptada = codificar(palabra);
+    ingreso.value = "";
+    img.style.display = "none";
+    mensaje.value = encriptada;
+    elementos.style.display = "none";
+    boton.style.display = "block";
+  }
 }
 
 function desencriptar() {
-  let palabra = ingreso.value;
-  palabra = convertToLowerCase(palabra);
-  let desencriptada = decodificar(palabra);
-  ingreso.value = "";
-  img.style.display = "none";
-  mensaje.value = desencriptada;
+  if (ingreso.value == "") {
+    alert("No hay nada por desencriptar");
+  } else {
+    let palabra = ingreso.value;
+    palabra = convertToLowerCase(palabra);
+    let desencriptada = decodificar(palabra);
+    ingreso.value = "";
+    img.style.display = "none";
+    elementos.style.display = "none";
+    boton.style.display = "block";
+    mensaje.value = desencriptada;
+  }
 }
 
 function codificar(palabra) {
-  
   let palabraEncriptada = "";
 
   for (let i = 0; i < palabra.length; i++) {
@@ -46,10 +63,9 @@ function codificar(palabra) {
 }
 
 function decodificar(palabra) {
-
   for (i in codificacion) {
     if (palabra.includes(codificacion[i])) {
-        palabra = palabra.replaceAll(codificacion[i],i);
+      palabra = palabra.replaceAll(codificacion[i], i);
     }
   }
 
@@ -61,6 +77,7 @@ function convertToLowerCase(palabra) {
 }
 
 function copiar() {
-    mensaje.select();
-    document.execCommand("copy");
+  mensaje.select();
+  document.execCommand("copy");
+  alert("Copiado al portapapeles");
 }

@@ -23,9 +23,10 @@ main {
   color: #0a3871;
   margin-top: 30px;
   text-transform: lowercase;
-  height: 400px;
+  height: 300px;
   padding: 2px;
   resize: none;
+  overflow:auto;
 }
 ::placeholder {
   color: #0a3871;
@@ -43,7 +44,8 @@ main {
   padding-left: 20px;
   position: absolute;
   resize: none;
-  height: 630px;
+  height: 300px;
+  overflow:auto;
 }
 .mensaje:focus {
   outline: none;
@@ -64,7 +66,9 @@ main {
   height: 67px;
   width: 328px;
 }
-
+.btn-encriptar:hover {
+  background-color: #153e70;
+}
 .btn-desencriptar {
   background-color: #d8dfe8;
   border: 1px solid #0a3871;
@@ -74,7 +78,9 @@ main {
   height: 67px;
   width: 328px;
 }
-
+.btn-desencriptar:hover {
+  background-color: #c4c4c4;
+}
 .btn-copiar {
   background-color: #c4c4c4;
   border: 1px solid #0a3871;
@@ -85,7 +91,11 @@ main {
   width: 314px;
   margin-left: 108px;
   position: absolute;
-  margin-top: 510px;
+  margin-top: 410px;
+}
+.btn-copiar:hover {
+  background-color: #adadad;
+  transform: scale(1.1);
 }
 
 .info {
@@ -130,9 +140,77 @@ footer {
   margin-left: 80px;
   margin-right: 80px;
   margin-top: 50px;
+  height: 160px;
+  
 }
 footer p {
   color: #495057;
   font-size: 18px;
   text-align: center;
+}
+
+/*Estilos movil*/
+@media (max-width: 768px) {
+  .logo {
+    padding-top: 15px;
+    margin-left: 40px;
+    width: 40%;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+  }
+  .ingreso {
+    margin-left: 0px;
+    width: 100%;
+    height: 100px;
+    overflow: scroll;
+  }
+  .mensaje {
+    margin-top: 10px;
+    margin-left: 0px;
+    width: 100%;
+    height: 100px;
+    overflow: scroll;
+   }
+  .botones {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0px;
+    margin-top: 20px;
+  }
+  .btn-encriptar {
+    margin-left: 0px;
+    width: 100%;
+  }
+  .btn-desencriptar {
+    margin-left: 0px;
+    width: 100%;
+  }
+  .btn-copiar {
+    
+    margin-left: 0px;
+    width: 100%;
+    margin-top: 120px;
+  }
+  .img {
+    margin-top: 10%;
+    margin-left: 20%;
+    display: flex;
+    align-content: center;
+    width: 50%;
+  }
+  span h4 {
+    margin-left: 2px;
+  }
+  span p {
+    margin-left: 2px;
+  }
+  footer{
+    display: block;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 210px;
+  }
 }
